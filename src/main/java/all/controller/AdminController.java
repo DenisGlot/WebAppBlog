@@ -31,6 +31,5 @@ public class AdminController {
 	public String removeUser(@PathVariable int id){
 		userService.delete(id);
 		return "redirect:/users.html";
-		
 	}
 }
