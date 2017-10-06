@@ -1,7 +1,9 @@
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\repository\ItemRepository.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\entity\Blog.java
+C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\controller\AdminController.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\controller\IndexController.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\repository\UserRepository.java
+C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\service\BlogService.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\service\UserService.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\service\InitDbService.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\entity\Item.java
@@ -10,4 +12,5 @@ C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\entity\User.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\controller\LoginController.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\repository\RoleRepository.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\controller\UserController.java
+C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\controller\RegisterController.java
 C:\JavaEE\Spring\workspace\WebAppBlog\src\main\java\all\repository\BlogRepository.java
