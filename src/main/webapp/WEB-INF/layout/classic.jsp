@@ -22,6 +22,9 @@
 
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- For validation -->
+<script type="text/javascript"
+	src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -57,10 +60,10 @@
 					<ul class="nav navbar-nav">
 						<li class="${current=='index'?'active':''} }"><a
 							href='<spring:url value="/"/>'>Home</a></li>
-							<security:authorize access="hasRole('ROLE_ADMIN')">
-						<li class="${current=='users'?'active':''} }"><a
-							href="<spring:url value="/users.html"/>">Users</a></li>
-							</security:authorize>
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<li class="${current=='users'?'active':''} }"><a
+								href="<spring:url value="/users.html"/>">Users</a></li>
+						</security:authorize>
 						<li class="${current=='registrer'?'active':''} }"><a
 							href="<spring:url value="/registrer.html"/>">Registrer</a></li>
 						<security:authorize access="! isAuthenticated()">
@@ -68,8 +71,8 @@
 								href="<spring:url value="/login.html"/>">Login</a></li>
 						</security:authorize>
 						<security:authorize access="isAuthenticated()">
-						<li class="${current=='account'?'active':''} }"><a
-							href="<spring:url value="/account.html"/>">My account</a></li>
+							<li class="${current=='account'?'active':''} }"><a
+								href="<spring:url value="/account.html"/>">My account</a></li>
 							<li><a href="<spring:url value="/logout"/>">Logout</a></li>
 						</security:authorize>
 					</ul>

@@ -3,14 +3,11 @@
 
 <%@ include file="../layout/taglib.jsp"%>
 
-<h1>${user.name}</h1>
-
-
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
 	data-target="#myModal">Add new blog!</button>
 
-<form:form commandName="blog" cssClass="form-horizontal">
+<form:form commandName="blog" cssClass="form-horizontal blogForm">
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
@@ -34,7 +31,7 @@
 					</div>
 
 					<div class="form-group">
-						<label for="name" class="col-sm-2 control-label">URL: </label>
+						<label for="url" class="col-sm-2 control-label">URL: </label>
 						<div class="col-sm-10">
 							<form:input path="url" cssClass="form-control" />
 							<form:errors path="url"/>
@@ -61,6 +58,26 @@ $(document).ready(function(){
 		$("#modalRemove .removeBtn").attr("href",$(this).attr("href"));
 		$("#modalRemove").modal();
 	});
+	$(".blogForm").validate({
+		rules : {
+			name : {
+				required : true,
+				minlength: 1
+			},
+			url : {
+				required : true,
+				url : true
+			}
+		},
+		highlight: function(e){
+			$(e).closest(".form-group").removeClass('has-success').addClass('has-error');
+		},
+		unhighlight: function(e){
+			$(e).closest(".form-group").removeClass('has-error').addClass('has-success');
+		}
+	}
+			
+	)
 })
 </script>
 
