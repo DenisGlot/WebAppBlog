@@ -1,29 +1,55 @@
 package all.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import all.entity.Blog;
+import all.entity.Item;
 import all.entity.User;
+import all.exception.RssException;
 import all.repository.BlogRepository;
+import all.repository.ItemRepository;
 import all.repository.UserRepository;
 
 @Service
 public class BlogService {
- 
+
 	@Autowired
 	private BlogRepository blogRepository;
-	
+
 	@Autowired
 	private UserRepository userRepository;
-	
+
+	@Autowired
+	private RssService rssService;
+
+	@Autowired
+	private ItemRepository itemRepository;
+
+	public void saveItems(Blog blog) {
+		try {
+			List<Item> items = rssService.getItems(blog.getUrl());
+			for (Item item : items) {
+				Item savedItem = itemRepository.findByBlogAndLink(blog, item.getLink());
+				if (savedItem == null) {
+					item.setBlog(blog);
+					itemRepository.save(item);
+				}
+			}
+		} catch (RssException e) {
+
+		}
+	}
+
 	public void save(Blog blog, String name) {
 		User user = userRepository.findByName(name);
 		blog.setUser(user);
 		blogRepository.save(blog);
-		
+		saveItems(blog);
 	}
 
 	public Blog findOne(int id) {
@@ -31,9 +57,9 @@ public class BlogService {
 	}
 
 	@PreAuthorize("#blog.user.name == authentication.name or hasRole('ROLE_ADMIN')")
-	public void delete(@P("blog")Blog blog) {
+	public void delete(@P("blog") Blog blog) {
 		blogRepository.delete(blog);
-		
+
 	}
 
 }
