@@ -23,8 +23,8 @@ public class Item {
 	private String title;
 
 	@Lob
-	@Type(type = "org.hibernate.type.StringClobType")
-	@Column(length = Integer.MAX_VALUE)
+	@Type(type = "org.hibernate.type.MaterializedClobType")
+	@Column(length = 1000000)
 	private String description;
 
 	@Column(length = 1000)

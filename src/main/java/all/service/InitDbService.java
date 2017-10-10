@@ -57,24 +57,31 @@ public class InitDbService {
 	    userAdmin.setRoles(roles);
 	    userRepository.save(userAdmin);
 	    
+	    Blog blogTom= new Blog();
+	    blogTom.setName("Tomcat Expert");
+	    blogTom.setUrl("http://www.tomcatexpert.com/blog/feed");
+	    blogTom.setUser(userAdmin);
+	    blogRepository.save(blogTom);
+	    
 	    Blog blogJava= new Blog();
-	    blogJava.setName("Java");
-	    blogJava.setUrl("https://olymptrade.com/ru-ru");
+	    blogJava.setName("Java World");
+	    blogJava.setUrl("https://www.javaworld.com/category/core-java/index.rss");
 	    blogJava.setUser(userAdmin);
 	    blogRepository.save(blogJava);
 	    
-	    Item item1 = new Item();
-	    item1.setBlog(blogJava);
-	    item1.setTitle("First");
-	    item1.setLink("https://www.optionrally.com/ru/");
-	    item1.setPublishedDate(new Date());
-	    itemRepository.save(item1);
-	    
-	    Item item2 = new Item();
-	    item2.setBlog(blogJava);
-	    item2.setTitle("Second");
-	    item2.setLink("https://binomo.com/ru");
-	    item2.setPublishedDate(new Date());
-	    itemRepository.save(item2);
+	   
+//	    Item item1 = new Item();
+//	    item1.setBlog(blogJava);
+//	    item1.setTitle("First");
+//	    item1.setLink("https://www.optionrally.com/ru/");
+//	    item1.setPublishedDate(new Date());
+//	    itemRepository.save(item1);
+//	    
+//	    Item item2 = new Item();
+//	    item2.setBlog(blogJava);
+//	    item2.setTitle("Second");
+//	    item2.setLink("https://binomo.com/ru");
+//	    item2.setPublishedDate(new Date());
+//	    itemRepository.save(item2);
 	}
 }

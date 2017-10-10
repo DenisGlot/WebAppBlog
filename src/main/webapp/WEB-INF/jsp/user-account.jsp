@@ -132,7 +132,7 @@
 							      </a>
 							  </strong>
 							  <br/>
-							  ${item.description}
+							  <c:out value="${item.description}"/>
 							</td>
 						</tr>
 					</c:forEach>
