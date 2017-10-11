@@ -14,6 +14,21 @@
 	</properties>
 
 	<dependencies>
+
+		<!-- Driver PosgreSql for dataBase -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901-1.jdbc4</version>
+		</dependency>
+
+		<!-- Pool for DataBase -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+
 		<!-- For JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
