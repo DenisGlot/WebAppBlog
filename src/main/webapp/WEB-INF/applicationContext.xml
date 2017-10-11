@@ -31,10 +31,6 @@
 	<task:annotation-driven/>
 	
 	<beans profile="prod" >
-	<import resource="database-prod.xml"/>
-	</beans>
-	
-	<beans profile="dev" >
 	<import resource="database-dev.xml"/>
 	</beans>
 
