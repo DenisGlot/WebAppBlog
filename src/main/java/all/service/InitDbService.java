@@ -58,12 +58,6 @@ public class InitDbService {
 			userAdmin.setRoles(roles);
 			userRepository.save(userAdmin);
 
-			Blog blogTom = new Blog();
-			blogTom.setName("Tomcat Expert");
-			blogTom.setUrl("http://www.tomcatexpert.com/blog/feed");
-			blogTom.setUser(userAdmin);
-			blogRepository.save(blogTom);
-
 			Blog blogJava = new Blog();
 			blogJava.setName("Java World");
 			blogJava.setUrl("https://www.javaworld.com/category/core-java/index.rss");
