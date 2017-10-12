@@ -28,7 +28,7 @@
 							      </a>
 							  </strong>
 							  <br />
-							  <c:out value="${item.description}"/>
+							  <c:out value="${item.textHtml}"/>
 							</td>
 						</tr>
 					</c:forEach>

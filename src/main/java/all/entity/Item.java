@@ -11,6 +11,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.Type;
+import org.jsoup.Jsoup;
 
 @Entity
 public class Item {
@@ -36,6 +37,11 @@ public class Item {
 	@ManyToOne
 	@JoinColumn(name = "blog_id")
 	private Blog blog;
+	
+	@Lob
+	@Type(type = "org.hibernate.type.MaterializedClobType")
+	@Column(length = 1000000)
+	private String textHtml;
 
 	public Blog getBlog() {
 		return blog;
@@ -47,6 +53,15 @@ public class Item {
 
 	public Integer getId() {
 		return id;
+	}
+
+	public String getTextHtml() {
+		textHtml = Jsoup.parse(description).text();
+		return textHtml;
+	}
+
+	public void setTextHtml(String textHtml) {
+		this.textHtml = textHtml;
 	}
 
 	public void setId(Integer id) {
@@ -84,4 +99,5 @@ public class Item {
 	public void setLink(String link) {
 		this.link = link;
 	}
+	
 }
