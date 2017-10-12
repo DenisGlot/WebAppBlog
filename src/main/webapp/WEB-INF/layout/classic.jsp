@@ -65,7 +65,7 @@
 								href="<spring:url value="/users.html"/>">Users</a></li>
 						</security:authorize>
 						<li class="${current=='registrer'?'active':''} }"><a
-							href="<spring:url value="/registrer.html"/>">Registrer</a></li>
+							href="<spring:url value="/registrer.html"/>">Register</a></li>
 						<security:authorize access="! isAuthenticated()">
 							<li class="${current=='login'?'active':''} }"><a
 								href="<spring:url value="/login.html"/>">Login</a></li>
@@ -83,15 +83,10 @@
 		</nav>
 
 		<!-- Main component for a primary marketing message or call to action -->
-		<div class="jumbotron" style="display:${current=='login'?'none':''}; ">
-			<h1>Nice job, Denis!</h1>
-			<p>This example is a quick exercise to illustrate how the
-				default, static navbar and fixed to top navbar work. It includes the
-				responsive CSS and HTML, so it also adapts to your viewport and
-				device.</p>
-			<p>
-				<a class="btn btn-lg btn-primary" href="../../components/#navbar"
-					role="button">View navbar docs &raquo;</a>
+		<div class="jumbotron" style="display:${current=='index'?'':'none'}; ">
+			<h1>Добро пожаловать!</h1>
+			<p>Этот веб-сайт способен собирать связанные элементы контента и отображать их или ссылки на них. Вы можете создать свой
+			аккаунт и добавлять ссылки на блоги, а данный сервис их обработает.
 			</p>
 		</div>
 
