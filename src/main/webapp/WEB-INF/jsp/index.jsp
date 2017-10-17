@@ -5,8 +5,8 @@
 
 <h3>
 	Такой структурированный результ агрегирования можно получить на примере
-	сайта <a href="https://www.javaworld.com/category/core-java"
-		target="_blank">https://www.javaworld.com/category/core-java</a>
+	сайта <a href="http://www.tomcatexpert.com"
+		target="_blank">http://www.tomcatexpert.com</a>
 </h3>
 
 
