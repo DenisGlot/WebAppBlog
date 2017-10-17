@@ -38,7 +38,6 @@ public class InitDbService {
 
 	@PostConstruct
 	public void init() {
-		if (roleRepository.findByName("ROLE_ADMIN") == null) {
 			Role roleUser = new Role();
 			roleUser.setName("ROLE_USER");
 			roleRepository.save(roleUser);
@@ -77,6 +76,6 @@ public class InitDbService {
 			// item2.setLink("https://binomo.com/ru");
 			// item2.setPublishedDate(new Date());
 			// itemRepository.save(item2);
-		}
+		
 	}
 }
