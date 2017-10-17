@@ -35,6 +35,16 @@ public class Blog {
 	
 	@OneToMany(mappedBy="blog",cascade=CascadeType.REMOVE)
 	private List<Item> items;
+	
+	private String summary;
+
+	public String getSummary() {
+		return summary;
+	}
+
+	public void setSummary(String summary) {
+		this.summary = summary;
+	}
 
 	public User getUser() {
 		return user;

@@ -37,6 +37,14 @@
 							<form:errors path="url" />
 						</div>
 					</div>
+					
+					<div class="form-group">
+						<label for="summary" class="col-sm-2 control-label">Description: </label>
+						<div class="col-sm-10">
+							<form:textarea path="summary" cssClass="form-control" />
+							<form:errors path="summary" />
+						</div>
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -107,8 +115,11 @@
 			</h1>
 			<p>
 				<a href="<spring:url value="/blog/remove/${blog.id}.html"/>"
-					class="btn btn-danger triggerRemove"> Remove blog</a> <br />
-				<c:out value="${blog.url}" />
+					class="btn btn-danger triggerRemove"> Remove blog</a>
+		        <br />
+				<a href="<spring:url value="${blog.url}"/>" target="_blank"><c:out value="${blog.url}" /></a>
+				<br />
+				<c:out value="${blog.summary}"/>
 			</p>
 
 
@@ -131,8 +142,7 @@
 							          <c:out value="${item.title}"/>
 							      </a>
 							  </strong>
-							  <br/>
-							  <c:out value="${item.description}"/>
+							 <br /> <c:out value="${item.textHtml == null ? ' ' : item.textHtml}" />
 							</td>
 						</tr>
 					</c:forEach>
