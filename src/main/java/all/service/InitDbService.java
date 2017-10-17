@@ -78,9 +78,5 @@ public class InitDbService {
 			// item2.setPublishedDate(new Date());
 			// itemRepository.save(item2);
 		}
-		BCryptPasswordEncoder bEncoder = new BCryptPasswordEncoder();
-		User admin = userRepository.findByName("admin");
-		admin.setPassword(bEncoder.encode("123456asdzxcv"));
-		userRepository.save(admin);
 	}
 }
